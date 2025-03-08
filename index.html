@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria Numérica</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer id="script-source"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Memoria Numérica</h1>
+            <div class="version-selector">
+                <button id="js-version" class="active">JavaScript</button>
+                <button id="jquery-version">jQuery</button>
+            </div>
+        </header>
+
+        <div class="game-container">
+            <div id="level-info">
+                <span>Nivel: <span id="current-level">1</span></span>
+                <span>Récord: <span id="high-score">0</span></span>
+            </div>
+
+            <div id="game-screen">
+                <div id="number-display" class="screen">
+                    <p id="number"></p>
+
+                </div>
+
+                <div id="input-screen" class="screen">
+                    <p>¿Qué número se mostró?</p>
+                    <input type="number" id="number-input" placeholder="Escribe el número">
+                    <button id="submit-btn">Comprobar</button>
+                </div>
+
+                <div id="result-screen" class="screen">
+                    <div id="correct-result">
+                        <h2>¡Correcto!</h2>
+                        <p>Preparándose para el siguiente nivel...</p>
+                    </div>
+                    <div id="incorrect-result">
+                        <h2>Incorrecto</h2>
+                        <p>El número correcto era: <span id="correct-number"></span></p>
+                        <p>Has llegado al nivel <span id="final-level"></span></p>
+                        <button id="restart-btn">Reiniciar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="start-screen" class="active">
+                <h2>Test de Memoria Numérica</h2>
+                <p>Se te mostrará un número durante un breve periodo de tiempo.</p>
+                <p>Intenta recordarlo y escríbelo cuando desaparezca.</p>
+                <p>Cada nivel añade un dígito más.</p>
+                <button id="start-btn">Comenzar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('js-version').addEventListener('click', function() {
+            document.getElementById('js-version').classList.add('active');
+            document.getElementById('jquery-version').classList.remove('active');
+            
+            const scriptElement = document.getElementById('script-source');
+            scriptElement.src = 'index.js';
+            location.reload();
+        });
+
+        document.getElementById('jquery-version').addEventListener('click', function() {
+            document.getElementById('jquery-version').classList.add('active');
+            document.getElementById('js-version').classList.remove('active');
+            
+            const jqueryScript = document.createElement('script');
+            jqueryScript.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+            document.head.appendChild(jqueryScript);
+            
+            const scriptElement = document.getElementById('script-source');
+            scriptElement.src = 'index-jquery.js';
+            location.reload();
+        });
+    </script>
+</body>
+</html>
+
