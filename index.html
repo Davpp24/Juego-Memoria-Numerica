@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memoria Numérica</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js" defer id="script-source"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -26,7 +26,6 @@
             <div id="game-screen">
                 <div id="number-display" class="screen">
                     <p id="number"></p>
-
                 </div>
 
                 <div id="input-screen" class="screen">
@@ -60,28 +59,34 @@
     </div>
 
     <script>
+        function cambiarScript(scriptName) {
+            const currentScript = localStorage.getItem("selectedScript");
+            if (currentScript === scriptName) return; // Evita recargar si ya está seleccionado
+            
+            localStorage.setItem("selectedScript", scriptName);
+            location.reload();
+        }
+
         document.getElementById('js-version').addEventListener('click', function() {
             document.getElementById('js-version').classList.add('active');
             document.getElementById('jquery-version').classList.remove('active');
-            
-            const scriptElement = document.getElementById('script-source');
-            scriptElement.src = 'index.js';
-            location.reload();
+            cambiarScript('index.js');
         });
 
         document.getElementById('jquery-version').addEventListener('click', function() {
             document.getElementById('jquery-version').classList.add('active');
             document.getElementById('js-version').classList.remove('active');
-            
-            const jqueryScript = document.createElement('script');
-            jqueryScript.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-            document.head.appendChild(jqueryScript);
-            
-            const scriptElement = document.getElementById('script-source');
-            scriptElement.src = 'index-jquery.js';
-            location.reload();
+            cambiarScript('index-jquery.js');
         });
+        
+        // Cargar el script correcto al inicio
+        window.onload = function() {
+            const selectedScript = localStorage.getItem("selectedScript") || "index.js";
+            const script = document.createElement("script");
+            script.src = selectedScript;
+            script.defer = true;
+            document.body.appendChild(script);
+        };
     </script>
 </body>
 </html>
-
