@@ -1,3 +1,31 @@
-Esta pagina web es una aplicación web la cual consiste en un juego de memoria el cual esta hecho con html, css y javascript y jquery teniendo un boton para cambiar entre javascript y jquery.
+🧠 Juego de Memoria - Web App
+Esta es una aplicación web interactiva que pone a prueba tu memoria. Está desarrollada con HTML, CSS, JavaScript y jQuery, y cuenta con un botón para cambiar dinámicamente entre JavaScript puro y jQuery para manejar la lógica del juego.
 
-La funcioalidad de la pagina web es la siguiente: Se mostrará un número durante un breve periodo de tiempo el cual tiene que recordar y escribirlo cuando desaparezca, saldra si el numero es correcto o no, si es correcto se añadira un numero mas y si es incorrecto se reiniciara el juego
+🎮 ¿Cómo funciona?
+Se mostrará un número aleatorio durante un breve período de tiempo.
+
+Una vez desaparezca, deberás recordarlo y escribirlo correctamente.
+
+Si aciertas:
+
+Se añadirá un nuevo número al final de la secuencia.
+
+Si fallas:
+
+El juego se reiniciará desde el principio.
+
+🛠 Tecnologías utilizadas
+HTML5
+
+CSS3
+
+JavaScript
+
+jQuery
+
+🔁 Modo de juego
+Puedes alternar entre la versión hecha en JavaScript puro y la versión hecha en jQuery mediante un botón, ideal para aprender las diferencias entre ambas implementaciones.
+
+
+![image](https://github.com/user-attachments/assets/f1add832-3af6-4a2b-8b69-fdd346c9efe8)
+![image](https://github.com/user-attachments/assets/0aaae1c3-81b6-43f3-89b9-750986edb4d7)
