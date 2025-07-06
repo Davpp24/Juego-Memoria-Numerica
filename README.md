@@ -23,6 +23,11 @@ JavaScript
 
 jQuery
 
+
+🔗 Juega ahora
+🎮 https://memorianumerica.netlify.app/
+
+
 🔁 Modo de juego
 Puedes alternar entre la versión hecha en JavaScript puro y la versión hecha en jQuery mediante un botón, ideal para aprender las diferencias entre ambas implementaciones.
 
